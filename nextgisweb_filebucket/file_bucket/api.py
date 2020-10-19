@@ -49,3 +49,8 @@ def setup_pyramid(comp, config):
         export, route_name='resource.export',
         context=FileBucket, request_method='GET'
     )
+    config.add_route(
+        'file_bucket.export',
+        r'/api/resource/{id:\d+}/file_bucket/export',
+        factory=resource_factory
+    ).add_view(export, context=FileBucket)
