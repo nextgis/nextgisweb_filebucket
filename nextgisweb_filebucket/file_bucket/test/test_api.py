@@ -92,7 +92,7 @@ def test_archive(env, webapp):
     webapp.get("/api/resource/%d/file/%s" % (bucket_id, TEST_FILE2["name"]), status=200)
     webapp.get("/api/resource/%d/file/%s" % (bucket_id, TEST_FILE3["name"]), status=200)
 
-    resp = webapp.get("/api/resource/%d/file_bucket/export" % bucket_id, status=200)
+    resp = webapp.get("/api/resource/%d/export" % bucket_id, status=200)
     with zipfile.ZipFile(six.BytesIO(resp.body), mode="r", compression=zipfile.ZIP_DEFLATED, allowZip64=False) as archive:
         assert archive.read(TEST_FILE2["name"]) == TEST_FILE2["content"]
         assert archive.read(TEST_FILE3["name"]) == TEST_FILE3["content"]

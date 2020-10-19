@@ -20,8 +20,8 @@ class FileBucketMenu(DynItem):
 
         if isinstance(args.obj, FileBucket):
             yield Link(
-                'file_bucket/export', _('Export'),
-                lambda args: args.request.route_url('file_bucket.export', id=args.obj.id),
+                'resource/export', _('Export'),
+                lambda args: args.request.route_url('resource.export', id=args.obj.id),
             )
 
 

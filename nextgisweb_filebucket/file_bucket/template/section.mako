@@ -12,7 +12,7 @@
         <tr>
             <td>${idx}</td>
             <td>
-                <a href="${request.route_url('file_bucket.file_download', id=obj.id, name=fobj.name)}">
+                <a href="${request.route_url('resource.file_download', id=obj.id, name=fobj.name)}">
                 ${fobj.name}
                 </a>
             </td>
